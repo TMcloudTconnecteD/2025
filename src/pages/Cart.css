@@ -1,0 +1,11 @@
+.cart {
+  padding: 20px;
+}
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.cart-summary {
+  text-align: right;
+}

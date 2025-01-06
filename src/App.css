@@ -1,0 +1,33 @@
+.categories {
+    padding: 2rem;
+    }
+
+    .categories h2 {
+      text-align: center;
+        margin-bottom: 1rem;
+        }
+
+        .categories-grid {
+          display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+              gap: 1.5rem;
+              }
+.app {
+    display: flex;
+      flex-direction: column;
+        min-height: 100vh;
+          background-color: #f8f9fa;
+          }
+
+          main {
+            flex: 1;
+              padding: 20px;
+                display: flex;
+                  justify-content: center;
+                    align-items: center;
+                    }
+
+                    footer {
+                      margin-top: auto;
+                      }
+}

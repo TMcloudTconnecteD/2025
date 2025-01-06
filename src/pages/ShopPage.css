@@ -1,0 +1,65 @@
+/* Shop Page Container */
+.shop-container {
+  padding: 1rem;
+  background-color: #f9f9f9;
+  min-height: 100vh;
+}
+
+/* Page Heading Styles */
+.page-heading {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Card Container for Shops */
+.shop-card-container {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(150px, 1fr)
+  ); /* Responsive layout */
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Individual Shop Card */
+.shop-card {
+  text-decoration: none;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  max-width: 180px; /* Ensures cards fit nicely */
+  transition: transform 0.3s ease-in-out;
+}
+
+.shop-card:hover {
+  transform: scale(1.05);
+}
+
+/* Image Styling */
+.shop-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+}
+
+/* Card Name Styling */
+.shop-card h3 {
+  font-size: 1rem;
+  margin: 0.5rem 0;
+  color: #555;
+  text-align: center;
+}
+
+/* No Shops Message */
+.no-shops {
+  font-size: 1.2rem;
+  color: #777;
+  text-align: center;
+  margin-top: 2rem;
+}

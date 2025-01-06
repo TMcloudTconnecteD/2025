@@ -1,0 +1,12 @@
+.checkout {
+  padding: 20px;
+}
+.checkout-summary {
+  margin-bottom: 20px;
+}
+.checkout-form input {
+  display: block;
+  margin-bottom: 10px;
+  padding: 10px;
+  width: 100%;
+}
