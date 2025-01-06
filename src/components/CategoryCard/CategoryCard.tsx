@@ -1,4 +1,4 @@
-// File: src/components/CategoryCard.tsx
+// File: src/components/CategoryCard/CategoryCard.tsx
 import React from "react";
 import { Link } from "react-router-dom";
 import "./CategoryCard.css";
@@ -6,14 +6,16 @@ import "./CategoryCard.css";
 interface CategoryCardProps {
   id: number;
   name: string;
-  image: string; // Can handle both static images and GIFs
+  image: string;
 }
 
 const CategoryCard: React.FC<CategoryCardProps> = ({ id, name, image }) => {
   return (
-    <Link to={`/pages/ShopPage/${name}`} className="category-card" key={id}>
-      <img src={image} alt={name} className="category-card-image" />
-      <h3 className="category-card-title">{name}</h3>
+    <Link to={`/shops/${id}`} className="category-card-link">
+      <div className="category-card">
+        <img src={image} alt={name} className="category-image" />
+        <h3 className="category-name">{name}</h3>
+      </div>
     </Link>
   );
 };

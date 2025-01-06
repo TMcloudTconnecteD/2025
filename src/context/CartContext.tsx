@@ -1,8 +1,7 @@
-// File: src/context/CartContext.tsx
 import React, { createContext, useContext, useState, ReactNode } from "react";
 
 interface CartItem {
-  id: string;
+  id: number;
   name: string;
   price: number;
   quantity: number;
@@ -12,13 +11,13 @@ interface CartItem {
 interface CartContextProps {
   cartItems: CartItem[];
   addToCart: (item: CartItem) => void;
-  removeFromCart: (id: string) => void;
-  updateQuantity: (id: string, quantity: number) => void;
+  removeFromCart: (id: number) => void; // Updated to number
+  updateQuantity: (id: number, quantity: number) => void; // Updated to number
   clearCart: () => void;
   getTotalPrice: () => number;
 }
 
-const CartContext = createContext<CartContextProps | undefined>(undefined);
+export const CartContext = createContext<CartContextProps | undefined>(undefined);
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -37,11 +36,11 @@ export const CartProvider = ({ children }: { children: ReactNode }) => {
     });
   };
 
-  const removeFromCart = (id: string) => {
+  const removeFromCart = (id: number) => { // Updated to number
     setCartItems((prev) => prev.filter((cartItem) => cartItem.id !== id));
   };
 
-  const updateQuantity = (id: string, quantity: number) => {
+  const updateQuantity = (id: number, quantity: number) => { // Updated to number
     setCartItems((prev) =>
       prev.map((cartItem) =>
         cartItem.id === id ? { ...cartItem, quantity } : cartItem

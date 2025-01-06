@@ -6,7 +6,6 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import Categories from "./pages/Categories";
 import ShopPage from "./pages/ShopPage";
-import Products from "./pages/ProductPage";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import Feedback from "./components/Feedback/Feedback";
@@ -22,13 +21,10 @@ const App: React.FC = () => {
             <Route path="/" element={<Categories />} />
 
             {/* Shop Page: Displays Shops for Selected Category */}
-            <Route path="/data/:categoryId" element={<ShopPage />} />
+            <Route path="/shops/:categoryId" element={<ShopPage />} />
 
-            {/* Products Page: Displays Products for Selected Shop */}
-            <Route
-              path="/pages/ShopPage/:shopName/products"
-              element={<Products />}
-            />
+            {/* Commenting out ProductPage and its routes for now */}
+            {/* <Route path="/shops/:shopName/products" element={<ProductPage />} /> */}
 
             {/* Cart Page: Displays Cart Items */}
             <Route path="/cart" element={<Cart />} />
@@ -38,7 +34,7 @@ const App: React.FC = () => {
           </Routes>
         </main>
 
-        {/* Feedback Component */}
+        {/* Feedback Section */}
         <Feedback />
 
         <Footer />

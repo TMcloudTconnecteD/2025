@@ -1,35 +1,46 @@
+// File: src/data/data.tsx
 export const categories = [
-  { id: 1, name: "Liquor", image: "c:\Users\ADMN\Pictures\images\product1.jpg" },
-  { id: 2, name: "Groceries", image: "c:\Users\ADMN\Pictures\images\shopping0.jpg" },
-  { id: 3, name: "Fashion", image: "c:\Users\ADMN\Pictures\images\fashion3.jpg" },
-  { id: 4, name: "Transport", image: "c:\Users\ADMN\Pictures\images\rentbike.jpg" },
-  { id: 5, name: "Shopping", image: "c:\Users\ADMN\Pictures\images\product2.jpg " },
+  { id: 1, name: "Liquor", image: "/images/liquor.jpg" },
+  { id: 2, name: "Shopping", image: "/images/shopping.jpg" },
+  { id: 3, name: "Fashion", image: "/images/fashion.jpg" },
+  { id: 4, name: "Groceries", image: "/images/shopping.jpg" },
+  { id: 5, name: "RideBoda", image: "/images/fashion.jpg" },
+  // Add more categories if needed
 ];
 
 export const shops = {
-  Liquor: [
-    { id: 1, name: "Bar & Beyond", image: "/images/liquor_shop1.jpg" },
-    { id: 2, name: "Wine Cellar", image: "/images/liquor_shop2.jpg" },
-    { id: 3, name: "Spirit Hub", image: "/images/liquor_shop3.jpg" },
+  1: [
+    { name: "Honey Pot", image: "/images/honey-pot.jpg" },
+    { name: "Mr Beast Yaya", image: "/images/mr-beast.jpg" },
+    { name: "Jupyter Wines", image: "/images/jupyter-wines.jpg" },
+    { name: "ToshBantu", image: "/images/jupyter-wines.jpg" },
   ],
-  Groceries: [
-    { id: 1, name: "Fresh Farm", image: "/images/grocery_shop1.jpg" },
-    { id: 2, name: "Daily Greens", image: "/images/grocery_shop2.jpg" },
-    { id: 3, name: "Harvest Store", image: "/images/grocery_shop3.jpg" },
+  2: [
+    { name: "Rose Shop", image: "/images/rose-shop.jpg" },
+    { name: "Ali Ownio Shop", image: "/images/al-owno.jpg" },
+    { name: "Easthter Shop", image: "/images/easthter.jpg" },
+    { name: "Comrades Shop", image: "/images/al-owno.jpg" },
+    { name: "Famous Shop", image: "/images/easthter.jpg" },
   ],
-  // Add more shops for other categories...
-};
+  3: [
+    { name: "Zara", image: "/images/zara.jpg" },
+    { name: "H&M", image: "/images/h&m.jpg" },
+    { name: "Uniqlo", image: "/images/uniqlo.jpg" },
+  ],
 
-export const products = {
-  "Bar & Beyond": [
-    { id: 1, name: "Whiskey", price: 500, image: "/images/whiskey.jpg" },
-    { id: 2, name: "Vodka", price: 300, image: "/images/vodka.jpg" },
-    // Add more products...
+  4: [
+    { name: "soko1", image: "/images/zara.jpg" },
+    { name: "Gakoromone", image: "/images/h&m.jpg" },
+    { name: "Texas", image: "/images/uniqlo.jpg" },
   ],
-  "Fresh Farm": [
-    { id: 1, name: "Tomatoes", price: 50, image: "/images/tomatoes.jpg" },
-    { id: 2, name: "Onions", price: 60, image: "/images/onions.jpg" },
-    // Add more products...
+
+  5: [
+    { name: "Anto", image: "/images/zara.jpg" },
+    { name: "Muchui", image: "/images/h&m.jpg" },
+    { name: "Kevo", image: "/images/uniqlo.jpg" },
   ],
-  // Add more products for other shops...
 };
+// File: src/data/data.ts
+export const products = [
+  // Your product data here
+];

@@ -1,14 +1,13 @@
-// File: src/pages/Products.tsx
-import React, { useContext } from "react";
+import React from "react";
 import { useParams } from "react-router-dom";
-import { products } from "../data/data"; // Import product data
-import { CartContext } from "../context/CartContext"; // Cart context
+import { useCart } from "../context/CartContext"; // Import useCart hook
+import { products } from "../data/data";
 import "./ProductPage.css";
 
 const ProductPage: React.FC = () => {
   const { shopName } = useParams<{ shopName: string }>(); // Get shop name from the URL
   const productList = products[shopName as keyof typeof products] || []; // Get products for the shop
-  const { addToCart } = useContext(CartContext); // Access cart functionality
+  const { addToCart } = useCart(); // Use the useCart hook to get the cart functions
 
   return (
     <div className="products-container">
@@ -27,7 +26,15 @@ const ProductPage: React.FC = () => {
                 </p>
                 <button
                   className="add-to-cart"
-                  onClick={() => addToCart({ ...product, discountedPrice })}
+                  onClick={() =>
+                    addToCart({
+                      id: product.id, // Ensure id is passed as a number
+                      name: product.name,
+                      price: parseFloat(discountedPrice), // Convert discounted price to a number
+                      quantity: 1,
+                      image: product.image,
+                    })
+                  }
                 >
                   Add to Cart
                 </button>

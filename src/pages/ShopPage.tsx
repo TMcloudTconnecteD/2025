@@ -1,30 +1,36 @@
-// File: src/pages/Shop.tsx
 import React from "react";
-import { useParams, Link } from "react-router-dom";
-import { shops } from "../data/data"; // Import shops data
+import { useParams } from "react-router-dom";
+import { categories, shops } from "../data/data";
+import ShopCard from "../components/ShopCard/ShopCard";
 import "./ShopPage.css";
 
 const ShopPage: React.FC = () => {
-  const { categories } = useParams<{ categories: string }>(); // Get category from the URL
-  const shopList = shops[category as keyof typeof shops] || []; // Get shops for the category
+  // Extract categoryId from URL params with fallback
+  const { categoryId } = useParams<{ categoryId: string }>();
+
+  // Ensure categoryId is always a string (fallback to empty string or default categoryId)
+  const validCategoryId = categoryId || ""; // Use '' as fallback or specify a default value
+
+  // Find the category using validCategoryId
+  const category = categories.find(
+    (cat) => cat.id === parseInt(validCategoryId)
+  );
+
+  // Get the shop list for the categoryId, with fallback to an empty array if no valid shops found
+  const shopList = shops[parseInt(validCategoryId)] || [];
 
   return (
-    <div className="shop-container">
-      <h1 className="page-heading">{category} Shops</h1>
+    <div className="shop-page">
+      <h1 className="shop-heading">
+        {category?.name ? `${category.name} Shops` : "Shops"}
+      </h1>
       <div className="shop-card-container">
         {shopList.length > 0 ? (
-          shopList.map((shop) => (
-            <Link
-              key={shop.id}
-              to={`/ProductPage/${shop.name}`} // Route to products page
-              className="shop-card"
-            >
-              <img src={shop.image} alt={shop.name} />
-              <h3>{shop.name}</h3>
-            </Link>
+          shopList.map((shop, index) => (
+            <ShopCard key={index} name={shop.name} image={shop.image} />
           ))
         ) : (
-          <p className="no-shops">No shops available for this category.</p>
+          <p>No shops available for this category.</p>
         )}
       </div>
     </div>
